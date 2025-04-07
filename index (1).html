@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sayta Giriş</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h2>Xoş gəlmisən!</h2>
+
+  <label>Adınız:</label>
+  <input type="text" id="firstName"><br><br>
+
+  <label>Soyadınız:</label>
+  <input type="text" id="lastName"><br><br>
+
+  <label>Sayt seçin:</label>
+  <select id="siteChoice">
+    <option value="codematrix">CodeMatrix</option>
+    <option value="cybermatrix">CyberMatrix</option>
+  </select><br><br>
+
+  <button onclick="enterSite()">Davam et</button>
+
+  <script>
+    function enterSite() {
+      const ad = document.getElementById("firstName").value;
+      const soyad = document.getElementById("lastName").value;
+      const secim = document.getElementById("siteChoice").value;
+
+      if (ad && soyad) {
+        alert("Xoş gəldin, " + ad + " " + soyad + "! Səni yönləndiririk...");
+
+        if (secim === "codematrix") {
+          window.location.href = "https://sites.google.com/view/codematrixcompany/ev";
+        } else if (secim === "cybermatrix") {
+          window.location.href = "https://sites.google.com/view/cybermatrix-azerbaijan-company?usp=sharing";
+        }
+      } else {
+        alert("Zəhmət olmasa ad və soyadı doldur!");
+      }
+    }
+  </script>
+</body>
+</html>
